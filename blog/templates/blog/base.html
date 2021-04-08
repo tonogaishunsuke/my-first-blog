@@ -10,16 +10,21 @@
     <body>
         <header class="page-header">
             <div class="container">
+                {% if user.is_authentiated %}
+                    <a href="{% url 'post_new' %}" class="top-menu">
+                        {% include './icons/pencil-fill.svg' %}
+                    </a>
+                {% endif %}
                 <h1><a href="/">Django Girls Blog</a></h1>
             </div>
         </header>
-        <main class="container">
+        <main class="content container">
             <div class="row">
                 <div class="col">
                     {% block content %}
                     {% endblock %}
                 </div>
-        </div>
-    </main>
-</body>
+            </div>
+        </main>
+    </body>
 </html>
